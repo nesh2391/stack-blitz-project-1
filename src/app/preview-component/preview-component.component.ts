@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { DialogComponentComponent } from "../dialog-component/dialog-component.component";
 @Component({
@@ -7,6 +7,7 @@ import { DialogComponentComponent } from "../dialog-component/dialog-component.c
   styleUrls: ["./preview-component.component.css"]
 })
 export class PreviewComponentComponent implements OnInit {
+  @Input() item: string;
   constructor(public dialog: MatDialog) {}
 
   openDialog() {

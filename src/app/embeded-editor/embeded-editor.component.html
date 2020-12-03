@@ -1,5 +1,9 @@
 <p>
-  embeded-editor works!
+	embeded-editor works!
 </p>
 
-<quill-editor></quill-editor>
+<quill-editor (onEditorCreated)="getEditorInstance($event)" (onContentChanged)="onContentChanged($event)"
+	[(ngModel)]="htmlText"></quill-editor>
+<input type="file" style="display: none" id="fileInputField"/>
+<p>{{remainingInputSize}}MB remaining.</p>
+<app-preview-component [item]="htmlText"></app-preview-component>
